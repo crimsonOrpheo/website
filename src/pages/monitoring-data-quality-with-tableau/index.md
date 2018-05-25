@@ -34,9 +34,11 @@ First things first, let's create a simple area chart showing how many records we
 Ok, so at this point, you should already see how many records you have each day. However, Tableau does not create marks for missing dates, which is fairly normal since they do not exist in the dataset. We're going to add a little magic to get what we want.
 
 4. In the Rows shelf, change the calculation to:
+
 ```
 LOOKUP(SUM([Number of Records]),0)
 ```
+
 5. Right click on the `Date` pill, and check "Show Missing Values"
 6. Right click on the Rows pill again and select "Format...".
 7. In the "Special Values (e.g. NULL)", choose to display Marks at Default Value.
@@ -54,9 +56,11 @@ The previous chart is a nice start: you can clearly see how the number of record
 
 1. Let's clean things a bit first, do a Ctrl + click on the calculation and drop it like it's hot in the data pane. Give a proper name to the calculation, such as `Number of Records (incl. 0)`.
 2. Right click on this measure, and create a new calculated field called `Missing?` with the following formula:
+
 ```
 IF [Number of Records (incl. 0)] > 0 THEN "Present" ELSE "Missing" END
 ```
+
 3. Duplicate the sheet so that we don't have to start from scratch again.
 4. Drop the calculation in the Rows shelf.
 5. Turn the Marks type to Gantt Bar.
