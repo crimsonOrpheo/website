@@ -1,7 +1,7 @@
 import Typography from 'typography'
 import githubTheme from 'typography-theme-github'
 
-githubTheme.baseLineHeight = 2
+githubTheme.baseLineHeight = 1.8
 githubTheme.scaleRatio = 2
 githubTheme.baseParagraphSpacing = 24
 
