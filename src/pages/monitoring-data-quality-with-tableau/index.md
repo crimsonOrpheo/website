@@ -5,8 +5,6 @@ date: "2018-05-24"
 
 In a perfect world, companies use dedicated tools and hire people responsible for data quality.
 
-[google](./google93179c8203d9657c.html)
-
 ![Is that right?](./haha.gif)
 
 But let's be real: I'm fairly certain we're all facing data quality issues with our sources. You'll find in this series of blog posts a few inputs on how you can monitor data quality directly in Tableau. The objective is not to patch or correct your data with Tableau tricks, since it will only make things worse in the long run, but to design a monitoring dashboard that will tell you at a glance what is missing or what needs to be fixed.
