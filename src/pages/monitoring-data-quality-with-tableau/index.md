@@ -35,7 +35,7 @@ Ok, so at this point, you should already see how many records you have each day.
 
 4. In the Rows shelf, change the calculation to:
 
-```
+```sql
 LOOKUP(SUM([Number of Records]),0)
 ```
 
@@ -57,7 +57,7 @@ The previous chart is a nice start: you can clearly see how the number of record
 1. Let's clean things a bit first, do a Ctrl + click on the calculation and drop it like it's hot in the data pane. Give a proper name to the calculation, such as `Number of Records (incl. 0)`.
 2. Right click on this measure, and create a new calculated field called `Missing?` with the following formula:
 
-```
+```sql
 IF [Number of Records (incl. 0)] > 0 THEN "Present" ELSE "Missing" END
 ```
 
