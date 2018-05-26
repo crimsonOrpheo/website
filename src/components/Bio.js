@@ -28,10 +28,9 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Written by <strong>Julien Bovet</strong>.{' '}
-          <a href="https://twitter.com/BovetJulien">
-          <p>Follow me on Twitter!</p>
-          </a>
+          I beat the drums & crunch data.<br/>
+          <a href="https://twitter.com/BovetJulien">Follow me on Twitter!
+        </a>
         </p>
       </div>
     )
