@@ -34,6 +34,7 @@ class Template extends React.Component {
             julienbovet.com
           </Link>
         </h1>
+        <meta name="google-site-verification" content="-2r67eEaDRT2H2gB99413hHXQhV1L-gYTBxohuMsvcY" />
       )
     } else {
       header = (
