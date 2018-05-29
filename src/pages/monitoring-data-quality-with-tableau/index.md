@@ -74,7 +74,7 @@ IF [Number of Records (incl. 0)] > 0 THEN "Present" ELSE "Missing" END
 
 ### Can't we just list the dates?
 
-You can, and you should! In fact, you could also add a few text elements, such as the overall coverage, or the exact number of missing days. There's nothing incredibly hard to get these sheets up and running: I won't do a step-by-step and leave you the fun to figure it out! Remember to start by duplicating a sheet though ;)
+You can, and you should! In fact, you could also add a few text elements, such as the overall coverage, or the exact number of missing days. There's nothing incredibly hard to get these sheets up and running: I won't do a step-by-step and leave you the fun to figure it out! Remember to start by duplicating a sheet though ;).
 
 Here's a final dashboard to see a potential end result:
 
