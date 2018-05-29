@@ -6,12 +6,18 @@ import get from 'lodash/get'
 import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
 
+import { DiscussionEmbed } from "disqus-react"
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pathContext
-
+    const disqusShortname = "julienbovet";
+    const disqusConfig = {
+      identifier: post.id,
+      title: post.frontmatter.title,
+    };
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
@@ -21,7 +27,7 @@ class BlogPostTemplate extends React.Component {
             ...scale(-1 / 5),
             display: 'block',
             marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            marginTop: rhythm(-0.75),
           }}
         >
           {post.frontmatter.date}
@@ -32,7 +38,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        
 
         <ul
           style={{
@@ -59,6 +65,7 @@ class BlogPostTemplate extends React.Component {
             </li>
           )}
         </ul>
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </div>
     )
   }

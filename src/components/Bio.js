@@ -18,19 +18,19 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
+          alt={`Julien Bovet`}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
             width: rhythm(2),
             height: rhythm(2),
+            borderRadius: 10
           }}
         />
         <p>
-          Written by <strong>Julien Bovet</strong>.{' '}
-          <a href="https://twitter.com/BovetJulien">
-            Follow me on Twitter!
-          </a>
+          I beat the drums & crunch data.<br/>
+          <a href="https://twitter.com/BovetJulien">Follow me on Twitter!
+        </a>
         </p>
       </div>
     )
