@@ -43,13 +43,9 @@ LOOKUP(SUM([Number of Records]),0)
 6. Right click on the Rows pill again and select "Format...".
 7. In the "Special Values (e.g. NULL)", choose to display Marks at Default Value.
 
-<<<<<<< HEAD
 Now, with the `LOOKUP` table calculation, Tableau looks at what is displayed in the viz. Combine this with "Show Missing Values", and Tableau will test the table calculation for each dates, including the missing ones. However, Tableau still doesn't know what to do when `LOOKUP` returns NULL for our missing dates: "Show at Default Value" is our final trick.
 
 > After some more testing, it appears that these additionnal steps are not necessary for area charts, but they are for other types (don't ask why!). Also, you could avoid the seventh step by wrapping the `LOOKUP` formula with `ZN()`, which forces 0 when NULL.
-=======
-Now, with the `LOOKUP` table calculation, Tableau is no longer checking what is in the data source, but what is displayed in the viz instead. Combine this with "Show Missing Values", and Tableau will test the table calculation for each date, including the missing ones. However, Tableau still doesn't know what to do when there's absolutely no record for a date, and "Show at Default Value" is our final trick.
->>>>>>> 518594f8042e5ba2cfec36102900a68870bf2736
 
 8. Turn the marks type from automatic to "Area".
 9. Enjoy.
