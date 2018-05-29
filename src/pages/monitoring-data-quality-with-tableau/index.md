@@ -38,7 +38,9 @@ Ok, so at this point, you should already see how many records you have each day.
 6. Right click on the Rows pill again and select "Format...".
 7. In the "Special Values (eg. NULL)", choose to display Marks at Default Value.
 
-Now, with the `LOOKUP` table calculation, Tableau is no longer checking what is in the datasource, but what is displayed in the viz instead. Combine this with "Show Missing Values", and Tableau will test the table calculation for each dates, including the missing ones. However, Tableau still doesn't know what to do when there's absolutely no record for a date, and "Show at Default Value" is our final trick.
+Now, with the `LOOKUP` table calculation, Tableau looks at what is displayed in the viz. Combine this with "Show Missing Values", and Tableau will test the table calculation for each dates, including the missing ones. However, Tableau still doesn't know what to do when `LOOKUP` returns NULL for our missing dates: "Show at Default Value" is our final trick.
+
+> After some more testing, it appears that these additionnal steps are not necessary for area charts, but they are for other types (don't ask why!). Also, you could avoid the seventh step by wrapping the `LOOKUP` formula with `ZN()`, which forces 0 when NULL.
 
 8. Turn the marks type from automatic to "Area".
 9. Enjoy.
@@ -62,8 +64,8 @@ The previous chart is a nice start: you can clearly see how the number of record
 
 ### Can't we just list the dates?
 
-You can, and you should! In fact, you could also add a few text elements, such as the overall coverage, or the exact number of missing days. There's nothing incredibly hard to get these sheets up and running: I won't do a step-by-step and leave you the fun to figure it out!
+You can, and you should! In fact, you could also add a few text elements, such as the overall coverage, or the exact number of missing days. There's nothing incredibly hard to get these sheets up and running: I won't do a step-by-step and leave you the fun to figure it out! Remember to start by duplicating a sheet though ;)
 
-Here's a final dashboard though to see a potential end result:
+Here's a final dashboard to see a potential end result:
 
 ![Dashboard](./dashboard.png)
