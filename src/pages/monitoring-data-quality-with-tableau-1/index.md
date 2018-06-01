@@ -79,3 +79,5 @@ You can, and you should! In fact, you could also add a few text elements, such a
 Here's a final dashboard to see a potential end result:
 
 ![Dashboard](./dashboard.png)
+
+>[This article is part of a series on monitoring data quality with Tableau. If you want more, click here for part 2! ](/monitoring-data-quality-with-tableau-2/)
