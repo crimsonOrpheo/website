@@ -1,6 +1,8 @@
 ---
-title: Monitoring data quality with Tableau - Part 1
+path: "/monitoring-data-quality-with-tableau-1"
+title: "Monitoring data quality with Tableau - Part 1"
 date: "2018-05-24"
+tags: ["Tableau","Data"]
 ---
 
 In a perfect world, companies use dedicated tools and hire people responsible for data quality.
