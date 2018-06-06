@@ -2,7 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import kebabCase from "lodash/kebabCase";
 
+import Tags from '../components/Taglist';
 import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
 
@@ -27,10 +29,10 @@ class BlogPostTemplate extends React.Component {
             ...scale(-1 / 5),
             display: 'block',
             marginBottom: rhythm(1),
-            marginTop: rhythm(-0.75),
+            marginTop: rhythm(-0.5),
           }}
         >
-          {post.frontmatter.date} in {post.frontmatter.tags.join(', ')}.
+        {post.frontmatter.date} in <Tags list={post.frontmatter.tags || []}/>
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
