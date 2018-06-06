@@ -33,7 +33,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-0.5),
           }}
         >
-        {post.frontmatter.date} in <Tags list={post.frontmatter.tags || []}/>
+        {post.frontmatter.date} in<Tags list={post.frontmatter.tags || []}/>
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr

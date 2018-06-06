@@ -6,17 +6,18 @@ export default function Tags({ list = [] }) {
     <span className="tag-list">
       {list.map(tag =>
         <span key={tag}>
+          &nbsp;
           <Link to={`/tags/${tag}`}>
             <span data-cat={tag} style={{
-              paddingLeft : 5,
-              paddingRight : 5,
-              paddingTop : 2.5,
-              paddingBottom : 2.5,
+              paddingLeft : 4,
+              paddingRight : 4,
+              paddingTop : 2,
+              paddingBottom : 2,
               // background : '#4078c0',
               color : '#FFFFFF',
               borderRadius: 5
             }}>{tag}</span>
-          </Link>&nbsp;
+          </Link>
         </span>
       )}
     </span>

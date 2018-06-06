@@ -1,8 +1,35 @@
+span a {
+  text-decoration: none !important;
+}
+
+[data-cat] {
+  transition-property: background-color color; /* Active la transition sur background-color */
+  transition-duration: 0.2s; /* La transition dure 1s */
+  border: thin solid;
+}
+
+
 [data-cat="Tableau"] {
   background-color: #686de0;
+  border-color: #686de0;
+
 }
+
+[data-cat="Tableau"]:hover {
+  color: #686de0 !important;
+  background-color: #FFFFFF;
+  border-color: #686de0;
+}
+
 [data-cat="Data"] {
   background-color: #30336b;
+  border-color: #30336b;
+}
+
+[data-cat="Data"]:hover {
+  color: #30336b !important;
+  background-color: #FFFFFF;
+  border-color: #30336b;
 }
 
 /* following colors : https://flatuicolors.com/palette/au */
