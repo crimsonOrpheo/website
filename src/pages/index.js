@@ -29,7 +29,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date} in <Tags list={node.frontmatter.tags || []}/></small>
+              <small>{node.frontmatter.date} in<Tags list={node.frontmatter.tags || []}/></small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
