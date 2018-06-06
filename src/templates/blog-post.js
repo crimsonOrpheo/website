@@ -7,6 +7,7 @@ import kebabCase from "lodash/kebabCase";
 import Tags from '../components/Taglist';
 import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
+import '../styles/tagPills.css'
 
 import { DiscussionEmbed } from "disqus-react"
 

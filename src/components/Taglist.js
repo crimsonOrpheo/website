@@ -7,12 +7,12 @@ export default function Tags({ list = [] }) {
       {list.map(tag =>
         <span key={tag}>
           <Link to={`/tags/${tag}`}>
-            <span style={{
+            <span data-cat={tag} style={{
               paddingLeft : 5,
               paddingRight : 5,
               paddingTop : 2.5,
               paddingBottom : 2.5,
-              background : '#4078c0',
+              // background : '#4078c0',
               color : '#FFFFFF',
               borderRadius: 5
             }}>{tag}</span>
