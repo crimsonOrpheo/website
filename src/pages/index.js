@@ -2,19 +2,26 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import graphql from 'graphql-tag';
 
 import Tags from '../components/Taglist';
 import Bio from '../components/Bio'
 import { rhythm } from '../utils/typography'
+import VerticalNavigationList from '../components/search/VerticalNavigationList';
 
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
-
+    const siteSearchIndex = get(this, 'props.data.siteSearchIndex')
     return (
       <div>
         <Helmet title={siteTitle}/>
+        <VerticalNavigationList
+          currentSlug={'/'}
+          edges={posts}
+          searchData={siteSearchIndex}
+        />
         <Bio />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -48,9 +55,13 @@ export const pageQuery = graphql`
         title
       }
     }
+    siteSearchIndex {
+      index
+    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          id
           excerpt
           fields {
             slug
@@ -59,6 +70,13 @@ export const pageQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             title
             tags
+          }
+          internal {
+            content
+          }
+          headings {
+            depth
+            value
           }
         }
       }

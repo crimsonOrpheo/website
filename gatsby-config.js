@@ -9,11 +9,28 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages`,
+        options: {
+          path: `${__dirname}/src/pages`,
         name: 'pages',
       },
     },
+    {
+      resolve: `@andrew-codes/gatsby-plugin-elasticlunr-search`,
+        options: {
+          fields: [
+            'title',
+            'tags',
+            'content'
+          ],
+          resolvers: {
+            MarkdownRemark: {
+              title: node => node.frontmatter.title,
+              tags: node => node.frontmatter.tags,
+              content: node => node.internal.content,
+            },
+          },
+        },
+      },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
