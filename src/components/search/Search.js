@@ -69,6 +69,7 @@ export default class Search extends Component {
           }}
           type="search"
           value={query}
+          ref={input => input && input.focus()}
         />
       </div>
     );

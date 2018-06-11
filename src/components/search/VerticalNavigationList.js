@@ -18,13 +18,13 @@ class VerticalNavigationList extends Component {
     return (
       <div
         style={{
-          backgroundColor : 'rgba(0, 0, 0, 0.5)',
+          backgroundColor : 'rgba(0, 0, 0, 0.80)',
           color: 'White',
           zindex: 1000,
           position: 'absolute',
           left: 0,
           right: 0,
-          top: 0,
+          top: 77,
           bottom: 0,
         }}>
         <Search
