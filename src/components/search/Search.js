@@ -56,13 +56,16 @@ export default class Search extends Component {
     return (
       <div role="search"
       style={{
-        padding: 10
+        padding: 10,
+        maxWidth: 540,
+        margin: 'auto'
       }}>
         <input
           onChange={this.updateQuery}
-          placeholder="search"
+          placeholder="What are you waiting for?"
           style={{
             width: '100%',
+            paddingLeft: 4
           }}
           type="search"
           value={query}

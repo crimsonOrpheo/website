@@ -18,15 +18,15 @@ class VerticalNavigationList extends Component {
     return (
       <div
         style={{
-          backgroundColor : '#535c68',
-          borderColor: '#535c68',
+          backgroundColor : 'rgba(0, 0, 0, 0.5)',
           color: 'White',
-          borderRadius: 10,
           zindex: 1000,
           position: 'absolute',
-          marginRight: 18
-        }}
-      >
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+        }}>
         <Search
           data={searchData}
           onSearch={(text, hits) =>

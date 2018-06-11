@@ -5,7 +5,9 @@ const NavigationItem = ({ depth, href, value, extract }) => (
   <dd
   style={{
     paddingLeft: 10,
-    paddingRight: 10
+    paddingRight: 10,
+    maxWidth: 540,
+    margin: 'auto'
   }}
   className={`depth-${depth}`}>
     <Link
