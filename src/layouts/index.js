@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import VerticalNavigationList from '../components/search/VerticalNavigationList';
 import { rhythm, scale } from '../utils/typography'
 import get from 'lodash/get'
+import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 require("prismjs/themes/prism-solarizedlight.css");
 
 class Template extends React.Component {
@@ -49,7 +50,7 @@ class Template extends React.Component {
           >
             julienbovet.com
           </Link>
-          <img
+          <img onClick={this.toggleHidden.bind(this)}
             style={{
               float: 'right',
               marginBottom : 0,
@@ -58,15 +59,15 @@ class Template extends React.Component {
             src={ require('../../static/magnifying-glass.png') } />
         </h1>
 
-        <div>
-          <button onClick={this.toggleHidden.bind(this)} >
-            Click to show modal
-          </button>
-          {!this.state.isHidden &&         <VerticalNavigationList
+        <div><ReactCSSTransitionGroup transitionName="thing">
+          {!this.state.isHidden &&
+            <VerticalNavigationList
+                    className="searchOverlay"
                     currentSlug={'/'}
                     edges={posts}
                     searchData={siteSearchIndex}
                   />}
+                  </ReactCSSTransitionGroup>
         </div>
         </span>
       )

@@ -2,8 +2,18 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 const NavigationItem = ({ depth, href, value, extract }) => (
-  <dd className={`depth-${depth}`}>
-    <Link to={href}>{value}</Link>
+  <dd
+  style={{
+    paddingLeft: 10,
+    paddingRight: 10
+  }}
+  className={`depth-${depth}`}>
+    <Link
+      style={{
+        color: 'white',
+        fontWeight: 600
+      }}
+      to={href}>{value}</Link>
     <small><p>"{extract}"</p></small>
   </dd>
 );

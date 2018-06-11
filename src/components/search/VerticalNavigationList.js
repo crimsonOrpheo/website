@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import NavigationItem from './NavigationItem';
 import Search from './Search';
+import '../../styles/animations.css'
+import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
 class VerticalNavigationList extends Component {
   constructor(...rest) {
@@ -14,7 +16,17 @@ class VerticalNavigationList extends Component {
     const { hits } = this.state;
 
     return (
-      <div>
+      <div
+        style={{
+          backgroundColor : '#535c68',
+          borderColor: '#535c68',
+          color: 'White',
+          borderRadius: 10,
+          zindex: 1000,
+          position: 'absolute',
+          marginRight: 18
+        }}
+      >
         <Search
           data={searchData}
           onSearch={(text, hits) =>

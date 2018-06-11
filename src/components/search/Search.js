@@ -54,7 +54,10 @@ export default class Search extends Component {
     const { query, hits } = this.state;
 
     return (
-      <div role="search">
+      <div role="search"
+      style={{
+        padding: 10
+      }}>
         <input
           onChange={this.updateQuery}
           placeholder="search"
