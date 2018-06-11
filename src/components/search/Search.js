@@ -49,28 +49,32 @@ export default class Search extends Component {
     const hits = this.index.search(query);
     return hits.map(({ ref }) => this.index.documentStore.getDoc(ref));
   }
-
   render() {
     const { query, hits } = this.state;
-
     return (
       <div role="search"
       style={{
-        padding: 10,
+        padding: 0,
         maxWidth: 540,
-        margin: 'auto'
+        margin: 'auto',
+        marginTop: 100,
+        marginBottom: 10,
+        paddingLeft: 10,
+        paddingRight: 10,
       }}>
         <input
           onChange={this.updateQuery}
-          placeholder="What are you waiting for?"
+          placeholder="What are you waiting for? Just do it!"
           style={{
             width: '100%',
-            paddingLeft: 4
+            paddingLeft: 10,
+            height: 40
           }}
           type="search"
           value={query}
-          ref={input => input && input.focus()}
+          autofocus
         />
+
       </div>
     );
   }

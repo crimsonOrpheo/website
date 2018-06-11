@@ -1,6 +1,6 @@
 .thing-enter {
   opacity: 0.01;
-  transition: opacity 0.1s ease-in;
+  transition: opacity 0.5s;
 }
 
 .thing-enter.thing-enter-active {
@@ -9,7 +9,7 @@
 
 .thing-leave {
   opacity: 1;
-  transition: opacity 0.1s ease-in;
+  transition: opacity 0.5s;
 }
 
 .thing-leave.thing-leave-active {

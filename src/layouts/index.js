@@ -13,7 +13,8 @@ class Template extends React.Component {
       isHidden: true
     }
   }
-  toggleHidden () {
+  toggleHidden (event) {
+    if (!event.target.matches('input'))
     this.setState({
       isHidden: !this.state.isHidden
     })
@@ -54,12 +55,13 @@ class Template extends React.Component {
             style={{
               float: 'right',
               marginBottom : 0,
-              marginTop : 6
+              marginTop : 6,
+              cursor: 'pointer'
             }}
             src={ require('../../static/magnifying-glass.png') } />
         </h1>
 
-        <div><ReactCSSTransitionGroup transitionName="thing">
+        <div onClick={this.toggleHidden.bind(this)}><ReactCSSTransitionGroup transitionName="thing">
           {!this.state.isHidden &&
             <VerticalNavigationList
                     className="searchOverlay"
