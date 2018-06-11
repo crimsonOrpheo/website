@@ -1,13 +1,27 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
+import VerticalNavigationList from '../components/search/VerticalNavigationList';
 import { rhythm, scale } from '../utils/typography'
-
+import get from 'lodash/get'
 require("prismjs/themes/prism-solarizedlight.css");
 
 class Template extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      isHidden: true
+    }
+  }
+  toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
   render() {
     const { location, children } = this.props
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const siteSearchIndex = get(this, 'props.data.siteSearchIndex')
     let header
 
     let rootPath = `/`
@@ -17,6 +31,7 @@ class Template extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
+        <span>
         <h1
           style={{
             ...scale(1.5),
@@ -42,6 +57,18 @@ class Template extends React.Component {
             }}
             src={ require('../../static/magnifying-glass.png') } />
         </h1>
+
+        <div>
+          <button onClick={this.toggleHidden.bind(this)} >
+            Click to show modal
+          </button>
+          {!this.state.isHidden &&         <VerticalNavigationList
+                    currentSlug={'/'}
+                    edges={posts}
+                    searchData={siteSearchIndex}
+                  />}
+        </div>
+        </span>
       )
     } else {
       header = (
@@ -82,3 +109,39 @@ class Template extends React.Component {
 }
 
 export default Template
+
+export const pageQuery = graphql`
+  query IndexQuery2 {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    siteSearchIndex {
+      index
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            title
+            tags
+          }
+          internal {
+            content
+          }
+          headings {
+            depth
+            value
+          }
+        }
+      }
+    }
+  }
+`

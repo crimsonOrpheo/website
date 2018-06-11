@@ -17,11 +17,6 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle}/>
-        <VerticalNavigationList
-          currentSlug={'/'}
-          edges={posts}
-          searchData={siteSearchIndex}
-        />
         <Bio />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
