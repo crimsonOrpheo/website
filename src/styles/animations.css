@@ -1,17 +1,17 @@
 .thing-enter {
-  opacity: 0.01;
-  transition: opacity 0.5s;
+  opacity: 0.0;
+  transition: opacity 0.4s;
 }
 
-.thing-enter.thing-enter-active {
+.thing-enter-active {
   opacity: 1;
 }
 
 .thing-leave {
   opacity: 1;
-  transition: opacity 0.5s;
+  transition: opacity 0.4s;
 }
 
 .thing-leave.thing-leave-active {
-  opacity: 0.01;
+  opacity: 0.0;
 }

@@ -14,11 +14,10 @@ class VerticalNavigationList extends Component {
   render() {
     const { currentSlug, edges, searchData } = this.props;
     const { hits } = this.state;
-
     return (
       <div
         style={{
-          backgroundColor : 'rgba(0, 0, 0, 0.80)',
+          backgroundColor : 'rgba(0, 0, 0, 0.85)',
           color: 'White',
           zindex: 1000,
           position: 'absolute',

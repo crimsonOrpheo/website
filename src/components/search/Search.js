@@ -72,7 +72,6 @@ export default class Search extends Component {
           }}
           type="search"
           value={query}
-          autoFocus={true}
         />
 
       </div>
