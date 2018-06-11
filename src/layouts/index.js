@@ -61,7 +61,7 @@ class Template extends React.Component {
             src={ require('../../static/magnifying-glass.png') } />
         </h1>
 
-        <div onClick={this.toggleHidden.bind(this)}><ReactCSSTransitionGroup transitionName="thing" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+        <div onClick={this.toggleHidden.bind(this)}><ReactCSSTransitionGroup transitionName="thing">
           {!this.state.isHidden &&
             <VerticalNavigationList
                     className="searchOverlay"
