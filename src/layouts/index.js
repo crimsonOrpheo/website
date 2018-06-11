@@ -34,6 +34,13 @@ class Template extends React.Component {
           >
             julienbovet.com
           </Link>
+          <img
+            style={{
+              float: 'right',
+              marginBottom : 0,
+              marginTop : 6
+            }}
+            src={ require('../../static/magnifying-glass.png') } />
         </h1>
       )
     } else {
