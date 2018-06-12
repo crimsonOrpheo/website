@@ -7,6 +7,7 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
+    "body-scroll-lock": "^2.4.6",
     "disqus-react": "^1.0.5",
     "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.39",
@@ -31,6 +32,7 @@
     "react-disqus-thread": "^0.4.0",
     "react-helmet": "^5.2.0",
     "react-responsive-grid": "^0.3.4",
+    "react-scrolllock": "^3.0.1",
     "typeface-merriweather": "0.0.43",
     "typeface-montserrat": "0.0.43",
     "typography": "^0.16.17",
