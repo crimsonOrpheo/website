@@ -12,8 +12,6 @@ githubTheme.overrideThemeStyles = () => ({
   }
 })
 
-delete githubTheme.googleFonts
-
 const typography = new Typography(githubTheme)
 
 // Hot reload typography in development.
