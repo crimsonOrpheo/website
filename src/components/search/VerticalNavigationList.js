@@ -28,6 +28,7 @@ class VerticalNavigationList extends Component {
             right: '0',
             top: '0',
             bottom: '0',
+            overflowY:'auto',
           }}>
           <Search
             data={searchData}
