@@ -35,7 +35,7 @@ If you're interested in the maths behind moving averages, [Wikipedia](https://en
 12. Right-click on the right axis in your viz, and select "Synchronize Axis"
 13. Turn the `SUM(Number of Records)` mark type to "Area"
 
-![First steps](./firstpart.gif)
+[![First steps](./firstpart.gif)](./firstpart.gif)
 
 ## Parameters!
 
@@ -54,7 +54,7 @@ To fine tune the number of days we want in the moving average, and the threshold
 
 4. Here's the fun part: play a little bit with your parameters until you're satisfied with the result. Two days and a threshold of 0.5 should be a good place to start. Being too strict will give you false positives, while being too permissive will give you false negatives. I'm sorry for the headache, but you get the idea ;).
 
-![Second part](./secondpart.gif)
+[![Second part](./secondpart.gif)](./secondpart.gif)
 
 ## Bring suspicious dates to light
 
@@ -71,7 +71,7 @@ IF SUM([Number of Records]) < [Moving Average] THEN SUM([Number of Records]) ELS
 4. Change the mark type for your `Suspicious Dates` to "Shape".
 5. Enjoy.
 
-![Third part](./thirdpart.gif)
+[![Third part](./thirdpart.gif)](./thirdpart.gif)
 
 ### Again, can't we just list the dates?
 
@@ -88,7 +88,7 @@ Alright, this time I'll help you a bit. Remember, it's always better to duplicat
 9. Edit the filter, and in special, select 'Non-null values'
 10. Et voilà!
 
-![Fourth part](./fourthpart.gif)
+[![Fourth part](./fourthpart.gif)](./fourthpart.gif)
 
 I often find myself struggling with these simple lists. The key is to remember that:
 - `Suspicious Dates` is a table calculation that needs every date to work properly.

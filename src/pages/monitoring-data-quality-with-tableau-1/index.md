@@ -19,8 +19,6 @@ After some googling, it appears that a handful of dimensions are used to define 
 
 Here's the deal: data sources are often updated using batch processing, which means that each morning, yesterday's data is inserted. When this process is not perfectly orchestrated or monitored using wonderful tools such as [Airflow](https://airflow.apache.org/), you might end up with missing dates for various reasons. Moreover, when you deal with huge databases over multiple years, one or two missing days can easily go unnoticed.
 
-[comment]: # (Stop it GIF)
-
 ## Solutions!
 
 Let's start this series by making a simple dashboard that shows how many records you have per day and puts into light those missing fuckers. For this tutorial, you can use my [fake dataset](./fake_data.xlsx), but I'd advise you to directly work with your own data.
@@ -52,7 +50,7 @@ Now, with the `LOOKUP` table calculation, Tableau looks at what is displayed in 
 8. Turn the marks type from automatic to "Area".
 9. Enjoy.
 
-![Records per day area chart](./firstChart.gif)
+[![Records per day area chart](./firstChart.gif)](./firstChart.gif)
 
 ### Binary indicator
 
@@ -72,7 +70,7 @@ IF [Number of Records (incl. 0)] > 0 THEN "Present" ELSE "Missing" END
 7. Change the color scheme to make missing values look bad, and present values look good.
 8. Get yourself a coffee.
 
-![Binary indicator chart](./secondChart.gif)
+[![Binary indicator chart](./secondChart.gif)](./secondChart.gif)
 
 ### Can't we just list the dates?
 
