@@ -68,7 +68,9 @@ export default class Search extends Component {
           style={{
             width: '100%',
             paddingLeft: 10,
-            height: 40
+            height: 40,
+            borderRadius: 5,
+            outline: 'none'
           }}
           type="search"
           value={query}
