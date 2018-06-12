@@ -49,6 +49,8 @@ class VerticalNavigationList extends Component {
                     extract={node.excerpt}
                     key={`nav-item-${index}-${node.fields.slug}`}
                     href={`${node.fields.slug}`}
+                    tags={node.frontmatter.tags}
+                    date={node.frontmatter.date}
                   />
                 </div>
               ))}
