@@ -32,8 +32,6 @@ class BlogPostTemplate extends React.Component {
           <meta property="og:title" content={post.frontmatter.title} />
           <meta property="og:type" content="website" />
           <meta property="og:description" content={post.excerpt} />
-          // <meta property="og:image" content={wallp} />
-          // <meta property="twitter:image" content={wallp} />
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <p
