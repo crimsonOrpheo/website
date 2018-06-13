@@ -57,14 +57,14 @@ export default class Search extends Component {
         padding: 0,
         maxWidth: 540,
         margin: 'auto',
-        marginTop: 100,
+        marginTop: 10,
         marginBottom: 10,
         paddingLeft: 10,
         paddingRight: 10,
       }}>
         <input
           onChange={this.updateQuery}
-          placeholder="What are you waiting for? Just do it!"
+          placeholder="Search much?"
           style={{
             width: '100%',
             paddingLeft: 10,
