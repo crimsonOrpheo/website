@@ -8,7 +8,6 @@ import Tags from '../components/Taglist';
 import Bio from '../components/Bio'
 import { rhythm } from '../utils/typography'
 import VerticalNavigationList from '../components/search/VerticalNavigationList';
-import wallp from "../../static/wallp.jpg";
 
 class BlogIndex extends React.Component {
   render() {
@@ -24,8 +23,8 @@ class BlogIndex extends React.Component {
           <meta name="twitter:creator" content="@BovetJulien" />
           <meta property="og:url" content="https://julienbovet.com" />
           <meta property="og:description" content="I beat the drums & crunch data." />
-          <meta property="twitter:image" content={wallp} />
-          <meta property="og:image" content={wallp} />
+          // <meta property="twitter:image" content={wallp} />
+          // <meta property="og:image" content={wallp} />
         </Helmet>
         <Bio />
         {posts.map(({ node }) => {
