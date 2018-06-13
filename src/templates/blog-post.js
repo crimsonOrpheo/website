@@ -3,6 +3,8 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import kebabCase from "lodash/kebabCase";
+import wallp from "../../static/wallp.jpg";
+
 
 import Tags from '../components/Taglist';
 import Bio from '../components/Bio'
@@ -31,6 +33,7 @@ class BlogPostTemplate extends React.Component {
           <meta property="og:title" content={post.frontmatter.title} />
           <meta property="og:type" content="website" />
           <meta property="og:description" content={post.excerpt} />
+          <meta property="og:image" content={wallp} />
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <p
