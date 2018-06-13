@@ -29,6 +29,8 @@ class BlogPostTemplate extends React.Component {
           <meta name="twitter:creator" content="@BovetJulien" />
           <meta property="og:url" content="https://julienbovet.com/{node.fields.slug}" />
           <meta property="og:title" content={post.frontmatter.title} />
+          <meta property="og:type" content="website" />
+          <meta property="og:description" content={post.excerpt} />
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -66,6 +68,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      excerpt
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
