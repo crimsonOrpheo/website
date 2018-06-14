@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import '../styles/tagPills.css'
 
 export default function Tags({ list = [] }) {
   return (
@@ -8,14 +9,7 @@ export default function Tags({ list = [] }) {
         <span key={tag}>
           &nbsp;
           <Link to={`/tags/${tag}`}>
-            <span data-cat={tag} style={{
-              paddingLeft : 4,
-              paddingRight : 4,
-              paddingTop : 2,
-              paddingBottom : 2,
-              // background : '#4078c0',
-              color : '#FFFFFF',
-              borderRadius: 5
+            <span className="tagPill" data-cat={tag} style={{
             }}>{tag}</span>
           </Link>
         </span>

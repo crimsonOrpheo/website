@@ -2,6 +2,16 @@ span a {
   text-decoration: none !important;
 }
 
+.tagPill {
+  padding-left: 4px !important;
+  padding-right : 4px !important;
+  padding-top : 2px !important;
+  padding-bottom : 2px !important;
+  border-radius: 5px !important;
+  color : #FFFFFF;
+
+}
+
 [data-cat] {
   transition-property: background-color color; /* Active la transition sur background-color */
   transition-duration: 0.2s; /* La transition dure 1s */
