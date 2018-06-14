@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import '../styles/tagPills.css'
+import { rhythm, scale } from '../utils/typography'
 // Utilities
 import kebabCase from "lodash/kebabCase";
 
@@ -20,15 +21,14 @@ const TagsPage = ({
     <Helmet title={title} />
     <div>
       <h1>Tags</h1>
-      <ul>
+      <div>
         {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+          <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            <span className="tagPill" data-cat={tag.fieldValue} key={tag.fieldValue} style={{marginRight: 10, marginBottom: 10, display:'inline-block'}}>
               {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
+              </span>
+          </Link>))}
+      </div>
     </div>
   </div>
 );
