@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { rhythm } from '../utils/typography'
+import Tags from '../components/Taglist';
 
 // Components
 import Link from "gatsby-link";
 
-const Tags = ({ pathContext, data }) => {
+const Tags2 = ({ pathContext, data }) => {
   const { tag } = pathContext;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${
@@ -14,22 +16,27 @@ const Tags = ({ pathContext, data }) => {
   return (
     <div>
       <h1>{tagHeader}</h1>
-      <ul>
         {edges.map(({ node }) => {
           const { path, title } = node.frontmatter;
           return (
-            <li key={path}>
-              <Link to={path}>{title}</Link>
-            </li>
+          <div>
+            <h3
+              style={{
+                marginBottom: rhythm(1 / 4),
+              }}>
+                <Link style={{ boxShadow: 'none' }}  to={path}>{title}</Link>
+            </h3>
+            <small>{node.frontmatter.date} in<Tags list={node.frontmatter.tags || []}/></small>
+            <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+          </div>
           );
         })}
-      </ul>
       <Link to="/tags">All tags</Link>
     </div>
   );
 };
 
-Tags.propTypes = {
+Tags2.propTypes = {
   pathContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
   }),
@@ -50,7 +57,7 @@ Tags.propTypes = {
   }),
 };
 
-export default Tags;
+export default Tags2;
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
@@ -62,9 +69,12 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           frontmatter {
+            date(formatString: "DD MMMM, YYYY")
             title
             path
+            tags
           }
         }
       }
