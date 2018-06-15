@@ -22,17 +22,19 @@ class BlogPostTemplate extends React.Component {
       identifier: post.id,
       title: post.frontmatter.title,
     };
+    const fullPublicURL = "https://julienbovet.com".concat(post.frontmatter.featuredImage.publicURL)
+    const fullPostURL = "https://julienbovet.com".concat(node.fields.slug)
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}>
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@BovetJulien" />
           <meta name="twitter:creator" content="@BovetJulien" />
-          <meta property="og:url" content="https://julienbovet.com/{node.fields.slug}" />
+          <meta property="og:url" content={fullPostURL} />
           <meta property="og:title" content={post.frontmatter.title} />
           <meta property="og:type" content="article" />
           <meta property="og:description" content={post.excerpt} />
-          <meta property="og:image" content={post.frontmatter.featuredImage.publicURL}/>
+          <meta property="og:image" content={fullPublicURL}/>
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <p
