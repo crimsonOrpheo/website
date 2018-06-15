@@ -32,6 +32,7 @@ class BlogPostTemplate extends React.Component {
           <meta property="og:title" content={post.frontmatter.title} />
           <meta property="og:type" content="article" />
           <meta property="og:description" content={post.excerpt} />
+          <meta property="og:image" content={post.frontmatter.featuredImage}/>
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -74,6 +75,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         tags
+        featuredImage {
+          childImageSharp{
+              sizes(maxWidth: 580) {
+                  ...GatsbyImageSharpSizes
+              }
+          }
+        }
       }
     }
   }
