@@ -24,6 +24,7 @@ class BlogPostTemplate extends React.Component {
     };
     const fullPublicURL = "https://julienbovet.com".concat(post.frontmatter.featuredImage.publicURL)
     const fullPostURL = "https://julienbovet.com".concat(post.frontmatter.path).concat('/')
+    const ogDescription = (post.frontmatter.subtitle).concat(' ').concat(post.excerpt)
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}>
@@ -33,7 +34,7 @@ class BlogPostTemplate extends React.Component {
           <meta property="og:url" content={fullPostURL} />
           <meta property="og:title" content={post.frontmatter.title} />
           <meta property="og:type" content="article" />
-          <meta property="og:description" content={post.excerpt} />
+          <meta property="og:description" content={ogDescription} />
           <meta property="og:image" content={fullPublicURL}/>
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
@@ -75,6 +76,7 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
+        subtitle
         path
         date(formatString: "MMMM DD, YYYY")
         tags

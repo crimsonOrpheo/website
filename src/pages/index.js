@@ -28,7 +28,9 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div style={{
+              marginBottom: rhythm(2)
+            }} key={node.fields.slug}>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
@@ -38,6 +40,9 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
+              <h4 style={{
+                  marginTop : 0
+              }}>{node.frontmatter.subtitle}</h4>
               <small>{node.frontmatter.date} in<Tags list={node.frontmatter.tags || []}/></small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
@@ -71,6 +76,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            subtitle
             tags
           }
           internal {

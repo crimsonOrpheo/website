@@ -55,6 +55,7 @@ class VerticalNavigationList extends Component {
                       href={`${node.fields.slug}`}
                       tags={node.frontmatter.tags}
                       date={node.frontmatter.date}
+                      subtitle={node.frontmatter.subtitle}
                     />
                   </div>
                 ))}

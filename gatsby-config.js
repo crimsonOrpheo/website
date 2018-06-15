@@ -20,11 +20,13 @@ module.exports = {
           fields: [
             'title',
             'tags',
-            'content'
+            'content',
+            'subtitle'
           ],
           resolvers: {
             MarkdownRemark: {
               title: node => node.frontmatter.title,
+              subtitle: node => node.frontmatter.subtitle,
               tags: node => node.frontmatter.tags,
               content: node => node.internal.content,
             },

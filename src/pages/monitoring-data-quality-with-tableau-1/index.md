@@ -4,6 +4,7 @@ title: "Monitoring data quality with Tableau - Part 1"
 date: "2018-05-24"
 tags: ["Tableau","Data"]
 featuredImage: "./finalResult.png"
+subtitle: "How to find and list missing dates in your datasource."
 ---
 
 In a perfect world, companies use dedicated tools and hire people responsible for data quality.

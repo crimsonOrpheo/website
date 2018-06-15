@@ -4,6 +4,7 @@ title: "Monitoring data quality with Tableau - Part 2"
 date: "2018-05-29"
 tags: ["Tableau","Data"]
 featuredImage: "./finalResult.png"
+subtitle: "How to find missing data in a dataset built with batch processing."
 ---
 
 >[This article is part of a series on monitoring data quality with Tableau. If you haven't checked part one, click here!](/monitoring-data-quality-with-tableau-1)
