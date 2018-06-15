@@ -28,7 +28,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          I beat the <a href="/tags/drums">drums</a> & crunch <a href="/tags/data">data</a>.<br/>
+          <a href="https://www.linkedin.com/in/julienbovet">I</a> beat the <a href="/tags/drums">drums</a> & crunch <a href="/tags/data">data</a>.<br/>
           <a href="https://twitter.com/BovetJulien">Follow me on Twitter!
         </a>
         </p>
