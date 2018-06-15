@@ -23,7 +23,7 @@ class BlogPostTemplate extends React.Component {
       title: post.frontmatter.title,
     };
     const fullPublicURL = "https://julienbovet.com".concat(post.frontmatter.featuredImage.publicURL)
-    const fullPostURL = "https://julienbovet.com".concat(node.fields.slug)
+    const fullPostURL = "https://julienbovet.com".concat(post.frontmatter.path).concat('/')
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}>
@@ -75,6 +75,7 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
+        path
         date(formatString: "MMMM DD, YYYY")
         tags
         featuredImage {
