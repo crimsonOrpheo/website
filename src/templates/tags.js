@@ -15,7 +15,11 @@ const Tags2 = ({ pathContext, data }) => {
 
   return (
     <div>
-      <h1>{tagHeader}</h1>
+      <h1
+        style={{
+          marginBottom: rhythm(2)
+        }}
+      >{tagHeader}</h1>
         {edges.map(({ node }) => {
           const { path, title } = node.frontmatter;
           return (
@@ -26,6 +30,9 @@ const Tags2 = ({ pathContext, data }) => {
               }}>
                 <Link style={{ boxShadow: 'none' }}  to={path}>{title}</Link>
             </h3>
+            <h4 style={{
+                marginTop : 0
+            }}>{node.frontmatter.subtitle}</h4>
             <small>{node.frontmatter.date} in<Tags list={node.frontmatter.tags || []}/></small>
             <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
           </div>
@@ -73,6 +80,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            subtitle
             path
             tags
           }
