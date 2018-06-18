@@ -9,6 +9,9 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-sitemap`,
+      options:{
+        exclude: ["/tags*"],
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
