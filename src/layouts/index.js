@@ -135,6 +135,7 @@ export const pageQuery = graphql`
             title
             subtitle
             tags
+            path
           }
           internal {
             content

@@ -52,7 +52,7 @@ class VerticalNavigationList extends Component {
                       value={node.frontmatter.title}
                       extract={node.excerpt}
                       key={`nav-item-${index}-${node.fields.slug}`}
-                      href={`${node.fields.slug}`}
+                      href={`${node.frontmatter.path}`}
                       tags={node.frontmatter.tags}
                       date={node.frontmatter.date}
                       subtitle={node.frontmatter.subtitle}
