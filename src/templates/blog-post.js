@@ -38,15 +38,21 @@ class BlogPostTemplate extends React.Component {
           <meta property="og:image" content={fullPublicURL}/>
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
+        <h5
+          style={{
+            marginTop: rhythm(-0.5),
+            marginBottom: rhythm(1),
+          }}
+        >{post.frontmatter.subtitle}</h5>
         <p
           style={{
             ...scale(-1 / 5),
             display: 'block',
-            marginBottom: rhythm(1),
+            marginBottom: rhythm(2),
             marginTop: rhythm(-0.5),
           }}
         >
-        {post.frontmatter.date} in<Tags list={post.frontmatter.tags || []}/>
+        {post.frontmatter.date} in<Tags list={post.frontmatter.tags || []}/> by Julien Bovet.
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
