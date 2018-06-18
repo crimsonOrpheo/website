@@ -6,9 +6,8 @@ import 'typeface-merriweather'
 import '../styles/animations.css'
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
-import linkedIn from './linkedin.png'
-import mail from './envelope.png'
-import twitter from './twitter.png'
+import linkedIn from './linkedin.svg'
+import twitter from './twitter.svg'
 
 
 
@@ -41,6 +40,9 @@ class Bio extends React.Component {
               style={{
                 borderRadius: 5,
                 marginRight: rhythm(1 / 3),
+                height: 24,
+                width: 24
+
               }}
             />
           </a>
@@ -50,6 +52,8 @@ class Bio extends React.Component {
               style={{
                 borderRadius: 5,
                 marginRight: rhythm(1 / 3),
+                height: 24,
+                width: 24
               }}
             />
           </a>
