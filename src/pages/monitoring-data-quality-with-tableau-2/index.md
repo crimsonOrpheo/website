@@ -7,7 +7,7 @@ featuredImage: "./finalResult.png"
 subtitle: "How to find missing data in a dataset built with batch processing."
 ---
 
->[This article is part of a series on monitoring data quality with Tableau. If you haven't checked part one, click here!](/monitoring-data-quality-with-tableau-1)
+>[This article is part of a series on monitoring data quality with Tableau. If you haven't checked part one, click here!](/monitoring-data-quality-with-tableau-1/)
 
 In the previous blog post, we saw how to identify missing dates in a source. Let's talk about a *worst* kind of dates, those who are in the dataset, but with an extremely low number of records.
 
