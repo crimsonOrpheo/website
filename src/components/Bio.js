@@ -57,7 +57,8 @@ class Bio extends React.Component {
             <small
               style={{
                 position: 'relative',
-                top: -7
+                top: -7,
+                zIndex: -1
               }}
             >julien@julienbovet.com</small>
           </a>
