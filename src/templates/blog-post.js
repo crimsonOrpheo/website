@@ -42,6 +42,7 @@ class BlogPostTemplate extends React.Component {
           style={{
             marginTop: rhythm(-0.5),
             marginBottom: rhythm(1),
+            color:'#7f8c8d'
           }}
         >{post.frontmatter.subtitle}</h5>
         <p
