@@ -18,9 +18,17 @@ const NavigationItem = ({ depth, href, value, extract, tags, date, subtitle }) =
         fontWeight: 600
       }}
       to={href}>{value}</Link><br/>
-      <small><b>{subtitle}</b></small><br/>
+      <small
+      style={{
+        color:'#bdc3c7'
+        }}
+      ><b>{subtitle}</b></small><br/>
       <small>{date} in<Tags list={tags}/></small>
-    <small><p><i>"{extract}"</i></p></small>
+    <small
+    style={{
+      color:'#bdc3c7'
+      }}
+    ><p><i>"{extract}"</i></p></small>
   </dd>
 );
 
