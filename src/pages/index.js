@@ -41,7 +41,8 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <h4 style={{
-                  marginTop : 0
+                  marginTop : 0,
+                  color:'#7f8c8d'
               }}>{node.frontmatter.subtitle}</h4>
               <small>{node.frontmatter.date} in<Tags list={node.frontmatter.tags || []}/></small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
