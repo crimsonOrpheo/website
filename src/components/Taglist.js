@@ -8,7 +8,7 @@ export default function Tags({ list = [] }) {
       {list.map(tag =>
         <span key={tag}>
           &nbsp;
-          <Link to={`/tags/${tag}/`}>
+          <Link to={`/tags/${tag}`}>
             <span className="tagPill" data-cat={tag} style={{
             }}>{tag}</span>
           </Link>

@@ -27,7 +27,7 @@ const TagsPage = ({
       >Tags</h1>
       <div>
         {group.map(tag => (
-          <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+          <Link to={`/tags/${kebabCase(tag.fieldValue)}`}>
             <span className="tagPill" data-cat={tag.fieldValue} key={tag.fieldValue} style={{marginRight: 10, marginBottom: 10, display:'inline-block'}}>
               {tag.fieldValue} ({tag.totalCount})
               </span>
