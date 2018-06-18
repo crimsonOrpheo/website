@@ -8,7 +8,7 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
-      resolve: `gatsby-plugin-sitemap`
+      resolve: `gatsby-plugin-sitemap`,
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -60,6 +60,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
