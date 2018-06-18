@@ -20,7 +20,11 @@ const TagsPage = ({
   <div>
     <Helmet title={title} />
     <div>
-      <h1>Tags</h1>
+      <h1
+        style={{
+        marginBottom: rhythm(2)
+      }}
+      >Tags</h1>
       <div>
         {group.map(tag => (
           <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
