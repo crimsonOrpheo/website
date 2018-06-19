@@ -14,6 +14,7 @@ class BlogIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const siteSearchIndex = get(this, 'props.data.siteSearchIndex')
+    const fullPublicURL = "https://julienbovet.com".concat(allFile.edges.node.publicURL)
     return (
       <div>
         <Helmet title={siteTitle}>
@@ -23,6 +24,7 @@ class BlogIndex extends React.Component {
           <meta name="twitter:creator" content="@BovetJulien" />
           <meta property="og:url" content="https://julienbovet.com" />
           <meta property="og:description" content="I beat the drums & crunch data." />
+          <meta property="og:image" content={fullPublicURL}/>
           <meta name="description" content="I beat the drums & crunch data. You can expect articles about dataviz, Tableau, Google Analytics, or drumming exercices." />
         </Helmet>
         <Bio />
@@ -67,6 +69,16 @@ export const pageQuery = graphql`
     siteSearchIndex {
       index
     }
+    allFile(filter:
+        {name: {eq:"profile-pic"}}
+      ) {
+        edges {
+          node {
+            name
+            publicURL
+          }
+        }
+      }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

@@ -21,6 +21,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+        options: {
+          path: `${__dirname}/static`,
+        name: 'static',
+      },
+    },
+    {
       resolve: `@andrew-codes/gatsby-plugin-elasticlunr-search`,
         options: {
           fields: [
