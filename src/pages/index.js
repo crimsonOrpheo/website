@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const siteSearchIndex = get(this, 'props.data.siteSearchIndex')
-    const fullPublicURL = "https://julienbovet.com".concat(allFile.edges.node.publicURL)
+    const fullPublicURL = "https://julienbovet.com".concat(this.props.data.allFile.edges.node.publicURL)
     return (
       <div>
         <Helmet title={siteTitle}>
