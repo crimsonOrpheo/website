@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
           <meta property="og:title" content="julienbovet.com" />
           <meta name="twitter:creator" content="@BovetJulien" />
           <meta property="og:url" content="https://julienbovet.com" />
-          <meta property="og:description" content="I beat the drums & crunch data." />
+          <meta property="og:description" content="I beat the drums & crunch data. You can expect articles about dataviz, Tableau, Google Analytics, or drumming exercices." />
           <meta property="og:image" content={fullImageURL}/>
           <meta name="description" content="I beat the drums & crunch data. You can expect articles about dataviz, Tableau, Google Analytics, or drumming exercices." />
         </Helmet>
