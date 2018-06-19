@@ -23,7 +23,7 @@ class BlogPostTemplate extends React.Component {
       title: post.frontmatter.title,
     };
     const fullPublicURL = "https://julienbovet.com".concat(post.frontmatter.featuredImage.publicURL)
-    const fullPostURL = "https://julienbovet.com".concat(post.frontmatter.path).concat('/')
+    const fullPostURL = "https://julienbovet.com".concat(post.frontmatter.path)
     const ogDescription = (post.frontmatter.subtitle).concat(' ').concat(post.excerpt)
     return (
       <div>
