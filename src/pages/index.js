@@ -20,6 +20,7 @@ class BlogIndex extends React.Component {
       <div>
         <Helmet title={siteTitle}>
           <meta name="twitter:site" content="@BovetJulien" />
+          <link rel="canonical" href="https://julienbovet.com" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="julienbovet.com" />
           <meta name="twitter:creator" content="@BovetJulien" />
