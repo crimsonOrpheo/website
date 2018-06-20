@@ -37,6 +37,7 @@ class BlogPostTemplate extends React.Component {
           <meta property="og:description" content={ogDescription} />
           <meta name="description" content={ogDescription} />
           <meta property="og:image" content={fullPublicURL}/>
+          <link rel="canonical" href={fullPostURL} />
         </Helmet>
         <h1>{post.frontmatter.title}</h1>
         <h5
