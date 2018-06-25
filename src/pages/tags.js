@@ -18,7 +18,7 @@ const TagsPage = ({
   },
 }) => (
   <div>
-    <Helmet title={title} />
+    <Helmet title='All tags | julienbovet.com' />
     <div>
       <h1
         style={{

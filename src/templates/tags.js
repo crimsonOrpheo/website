@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { rhythm } from '../utils/typography'
 import Tags from '../components/Taglist';
+import Helmet from "react-helmet";
 
 // Components
 import Link from "gatsby-link";
@@ -9,12 +10,14 @@ import Link from "gatsby-link";
 const Tags2 = ({ pathContext, data }) => {
   const { tag } = pathContext;
   const { edges, totalCount } = data.allMarkdownRemark;
+  const pageTitle = `Posts in ${tag} | julienbovet.com`
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`;
 
   return (
     <div>
+    <Helmet title={pageTitle} />
       <h1
         style={{
           marginBottom: rhythm(2)
