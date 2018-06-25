@@ -1,5 +1,5 @@
 ---
-path: "/monitoring-data-quality-with-tableau-1"
+path: "/monitoring-data-quality-with-tableau-1/"
 title: "Monitoring data quality with Tableau - Part 1"
 date: "2018-05-24"
 tags: ["Tableau","Data"]
@@ -82,4 +82,4 @@ Here's a final dashboard to see a potential end result:
 
 ![Dashboard](./dashboard.png)
 
->[This article is part of a series on monitoring data quality with Tableau. If you want more, click here for part 2! ](/monitoring-data-quality-with-tableau-2)
+>[This article is part of a series on monitoring data quality with Tableau. If you want more, click here for part 2! ](/monitoring-data-quality-with-tableau-2/)

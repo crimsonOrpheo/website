@@ -38,7 +38,7 @@ const Tags2 = ({ pathContext, data }) => {
           </div>
           );
         })}
-      <Link to="/tags">All tags</Link>
+      <Link to="/tags/">All tags</Link>
     </div>
   );
 };
