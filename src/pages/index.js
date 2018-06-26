@@ -28,6 +28,7 @@ class BlogIndex extends React.Component {
           <meta property="og:description" content="I beat the drums & crunch data. You can expect articles about dataviz, Tableau, Google Analytics, or drumming exercices." />
           <meta property="og:image" content={fullImageURL}/>
           <meta name="description" content="I beat the drums & crunch data. You can expect articles about dataviz, Tableau, Google Analytics, or drumming exercices." />
+          <meta name="google-site-verification" content="-2r67eEaDRT2H2gB99413hHXQhV1L-gYTBxohuMsvcY" />
         </Helmet>
         <Bio />
         {posts.map(({ node }) => {
