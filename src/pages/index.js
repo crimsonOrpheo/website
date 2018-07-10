@@ -1,11 +1,12 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import graphql from 'graphql-tag';
 
 import Tags from '../components/Taglist';
 import Bio from '../components/Bio'
+import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
 import VerticalNavigationList from '../components/search/VerticalNavigationList';
 
@@ -17,6 +18,7 @@ class BlogIndex extends React.Component {
     const imageURL = get(this,'props.data.allFile.edges[0].node.publicURL')
     const fullImageURL = "https://julienbovet.com".concat(imageURL)
     return (
+<<<<<<< HEAD
       <div>
         <Helmet title={siteTitle}>
           <meta name="twitter:site" content="@BovetJulien" />
@@ -30,6 +32,10 @@ class BlogIndex extends React.Component {
           <meta name="description" content="I beat the drums & crunch data. You can expect articles about dataviz, Tableau, Google Analytics, or drumming exercices." />
           <meta name="google-site-verification" content="-2r67eEaDRT2H2gB99413hHXQhV1L-gYTBxohuMsvcY" />
         </Helmet>
+=======
+      <Layout location={this.props.location}>
+        <Helmet title={siteTitle} />
+>>>>>>> 4a3683b9e2b0383ae71d1aaae771d4fd0831ca5f
         <Bio />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
@@ -55,7 +61,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
-      </div>
+      </Layout>
     )
   }
 }

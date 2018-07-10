@@ -1,12 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import get from 'lodash/get'
 import kebabCase from "lodash/kebabCase";
 
 
 import Tags from '../components/Taglist';
 import Bio from '../components/Bio'
+import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 import '../styles/tagPills.css'
 
@@ -16,6 +17,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+<<<<<<< HEAD
     const { previous, next } = this.props.pathContext
     const disqusShortname = "julienbovet";
     const disqusConfig = {
@@ -39,6 +41,13 @@ class BlogPostTemplate extends React.Component {
           <meta property="og:image" content={fullPublicURL}/>
           <link rel="canonical" href={fullPostURL} />
         </Helmet>
+=======
+    const { previous, next } = this.props.pageContext
+
+    return (
+      <Layout location={this.props.location}>
+        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+>>>>>>> 4a3683b9e2b0383ae71d1aaae771d4fd0831ca5f
         <h1>{post.frontmatter.title}</h1>
         <h5
           style={{
@@ -63,8 +72,39 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
+<<<<<<< HEAD
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </div>
+=======
+        <Bio />
+
+        <ul
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            listStyle: 'none',
+            padding: 0,
+          }}
+        >
+          {previous && (
+            <li>
+              <Link to={previous.fields.slug} rel="prev">
+                ← {previous.frontmatter.title}
+              </Link>
+            </li>
+          )}
+
+          {next && (
+            <li>
+              <Link to={next.fields.slug} rel="next">
+                {next.frontmatter.title} →
+              </Link>
+            </li>
+          )}
+        </ul>
+      </Layout>
+>>>>>>> 4a3683b9e2b0383ae71d1aaae771d4fd0831ca5f
     )
   }
 }
