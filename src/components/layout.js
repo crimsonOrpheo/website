@@ -1,11 +1,6 @@
 import React from 'react'
-<<<<<<< HEAD:src/layouts/index.js
 import Link from 'gatsby-link'
 import VerticalNavigationList from '../components/search/VerticalNavigationList';
-=======
-import { Link } from 'gatsby'
-
->>>>>>> 4a3683b9e2b0383ae71d1aaae771d4fd0831ca5f:src/components/layout.js
 import { rhythm, scale } from '../utils/typography'
 import get from 'lodash/get'
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
@@ -26,13 +21,9 @@ class Template extends React.Component {
   }
   render() {
     const { location, children } = this.props
-<<<<<<< HEAD:src/layouts/index.js
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
     const siteSearchIndex = get(this, 'props.data.siteSearchIndex')
-=======
-    const rootPath = `${__PATH_PREFIX__}/`
->>>>>>> 4a3683b9e2b0383ae71d1aaae771d4fd0831ca5f:src/components/layout.js
     let header
 
     if (location.pathname === rootPath) {
