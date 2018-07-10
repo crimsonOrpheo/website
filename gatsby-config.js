@@ -13,6 +13,18 @@ module.exports = {
       }
     },
     {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: "julienbovet.com",
+      short_name: "julienbovet",
+      start_url: "/",
+      background_color: "#ffffff",
+      theme_color: "#686de0",
+      display: "minimal-ui",
+      icon: "static/faveicon.ico", // This path is relative to the root of the site.
+    },
+  },
+    {
       resolve: `gatsby-source-filesystem`,
         options: {
           path: `${__dirname}/src/pages`,
