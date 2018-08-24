@@ -8,7 +8,7 @@ featuredImage: "./theoreticalFramework.png"
 subtitle: "My master thesis in full!"
 ---
 
-During my academic exchange at Maastricht University in 2016, I dedicated my thesis research to online conversion, and applied statistical techniques on a site-centric dataset from a French e-retailer. You can read the abstract below or download the paper in full right [here!](./julienBovetMasterThesis.pdf)
+During my academic exchange at Maastricht University in 2016, I dedicated my thesis research to online conversion, and applied statistical techniques on a site-centric dataset from a French e-retailer. This work, titled "How can e-retailers reduce the gap between online and offline conversion rates?" was chosen to represent Maastricht University at the Dutch Marketing Thesis Award in 2016. You can read the abstract below or download the paper in full right [here!](./julienBovetMasterThesis.pdf)
 
 ![Theoretical Framework](./theoreticalFramework.png)
 
