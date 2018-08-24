@@ -5,7 +5,6 @@ import '../../styles/animations.css'
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
-
 class VerticalNavigationList extends Component {
   constructor(...rest) {
     super(...rest);
@@ -56,6 +55,14 @@ class VerticalNavigationList extends Component {
                       tags={node.frontmatter.tags}
                       date={node.frontmatter.date}
                       subtitle={node.frontmatter.subtitle}
+                    />
+                    <hr
+                      style={{
+                        backgroundColor:"#BDC3C7",
+                        width:"300px",
+                        marginLeft:"auto",
+                        marginRight:"auto"
+                      }}
                     />
                   </div>
                 ))}

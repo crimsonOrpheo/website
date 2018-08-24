@@ -8,6 +8,7 @@ const NavigationItem = ({ depth, href, value, extract, tags, date, subtitle }) =
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 10,
+    paddingBottom: 10,
     maxWidth: 540,
     margin: 'auto'
   }}
