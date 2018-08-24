@@ -19,7 +19,7 @@ module.exports = {
       short_name: "julienbovet",
       start_url: "/",
       background_color: "#ffffff",
-      theme_color: "#30336b",
+      theme_color: "#4078c0",
       display: "minimal-ui",
       icon: "static/favicon.ico", // This path is relative to the root of the site.
     },
