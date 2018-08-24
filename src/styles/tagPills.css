@@ -42,4 +42,15 @@ span a {
   border-color: #30336b;
 }
 
+[data-cat="Statistics"] {
+  background-color: #130f40;
+  border-color: #130f40;
+}
+
+[data-cat="Statistics"]:hover {
+  color: #130f40 !important;
+  background-color: #FFFFFF;
+  border-color: #130f40;
+}
+
 /* following colors : https://flatuicolors.com/palette/au */

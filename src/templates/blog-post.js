@@ -61,6 +61,7 @@ class BlogPostTemplate extends React.Component {
         <hr
           style={{
             marginBottom: rhythm(1),
+            marginTop: rhythm(2)
           }}
         />
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
