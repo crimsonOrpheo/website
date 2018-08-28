@@ -9,6 +9,7 @@ import { rhythm } from '../utils/typography'
 import linkedIn from './linkedin.svg'
 import twitter from './twitter.svg'
 import { simpleEvent } from '../utils/digital-analytics'
+import Link from 'gatsby-link';
 
 class Bio extends React.Component {
   render() {
@@ -31,7 +32,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          <a href="/cv" onClick={() => simpleEvent('Bio','CV')}>I</a> beat the drums & crunch <a href="/tags/data/" onClick={() => simpleEvent('Bio','Data')}>data</a>.
+          <a href="/cv" onClick={() => simpleEvent('Bio','CV')}>I</a> beat the drums & crunch <Link to={`/tags/data/`} onClick={() => simpleEvent('Bio','Data')}>data</Link>.
         <br/>
           <a href="https://twitter.com/BovetJulien" onClick={() => simpleEvent('Bio','Twitter')}>
             <img
