@@ -31,7 +31,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          <a href="/cv" onClick={() => simpleEvent('Bio','CV')}>I</a> beat the drums & crunch <a href="/tags/data" onClick={() => simpleEvent('Bio','Data')}>data</a>.
+          <a href="/cv" onClick={() => simpleEvent('Bio','CV')}>I</a> beat the drums & crunch <a href="/tags/data/" onClick={() => simpleEvent('Bio','Data')}>data</a>.
         <br/>
           <a href="https://twitter.com/BovetJulien" onClick={() => simpleEvent('Bio','Twitter')}>
             <img
