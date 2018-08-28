@@ -32,7 +32,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          I beat the drums & crunch <a href="/tags/data">data</a>.
+          <a href="/cv">I</a> beat the drums & crunch <a href="/tags/data">data</a>.
         <br/>
           <a href="https://twitter.com/BovetJulien">
             <img
