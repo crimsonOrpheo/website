@@ -8,8 +8,7 @@ import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 import linkedIn from './linkedin.svg'
 import twitter from './twitter.svg'
-
-
+import { simpleEvent } from '../utils/digital-analytics'
 
 class Bio extends React.Component {
   render() {
@@ -32,9 +31,9 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          <a href="/cv">I</a> beat the drums & crunch <a href="/tags/data">data</a>.
+          <a href="/cv" onClick={() => simpleEvent('Bio','CV')}>I</a> beat the drums & crunch <a href="/tags/data" onClick={() => simpleEvent('Bio','Data')}>data</a>.
         <br/>
-          <a href="https://twitter.com/BovetJulien">
+          <a href="https://twitter.com/BovetJulien" onClick={() => simpleEvent('Bio','Twitter')}>
             <img
               src={twitter}
               style={{
@@ -42,11 +41,10 @@ class Bio extends React.Component {
                 marginRight: rhythm(1 / 3),
                 height: 24,
                 width: 24
-
               }}
             />
           </a>
-          <a href="https://www.linkedin.com/in/julienbovet">
+          <a href="https://www.linkedin.com/in/julienbovet" onClick={() => simpleEvent('Bio','Linkedin')}>
             <img
               src={linkedIn}
               style={{
@@ -57,7 +55,7 @@ class Bio extends React.Component {
               }}
             />
           </a>
-          <a href="mailto:julien@julienbovet.com">
+          <a href="mailto:julien@julienbovet.com" onClick={() => simpleEvent('Bio','Mail')}>
             <small
               style={{
                 position: 'relative',
