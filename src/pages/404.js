@@ -4,12 +4,14 @@ import Link from 'gatsby-link';
 
 const NotFoundPage = () => {
   // Analytics
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'virtualPageView',
-    pagePath: '/404/',
-    pageTitle: '404 | julienbovet.com'
-  });
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'virtualPageView',
+      pagePath: '/404/',
+      pageTitle: '404 | julienbovet.com'
+    });
+  }
   //
   return (
   <div>

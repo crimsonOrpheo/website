@@ -15,12 +15,14 @@ const Tags2 = ({ pathContext, data }) => {
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`;
   // Analytics
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'virtualPageView',
-    pagePath: `/tags/${tag.toLowerCase()}/`,
-    pageTitle: pageTitle
-  });
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'virtualPageView',
+      pagePath: `/tags/${tag.toLowerCase()}/`,
+      pageTitle: pageTitle
+    });
+  }
   //
   return (
     <div>

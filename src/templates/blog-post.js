@@ -26,12 +26,14 @@ class BlogPostTemplate extends React.Component {
     const fullPostURL = "https://julienbovet.com".concat(post.frontmatter.path)
     const ogDescription = (post.frontmatter.subtitle).concat(' ').concat(post.excerpt)
     // Analytics
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'virtualPageView',
-      pagePath: post.frontmatter.path,
-      pageTitle: `${post.frontmatter.title} | ${siteTitle}`
-    });
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'virtualPageView',
+        pagePath: post.frontmatter.path,
+        pageTitle: `${post.frontmatter.title} | ${siteTitle}`
+      });
+    }
     //
     return (
       <div>

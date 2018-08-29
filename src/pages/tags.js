@@ -18,12 +18,14 @@ const TagsPage = ({
   },
 }) => {
   // Analytics
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'virtualPageView',
-    pagePath: '/tags/',
-    pageTitle: 'All tags | julienbovet.com'
-  });
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'virtualPageView',
+      pagePath: '/tags/',
+      pageTitle: 'All tags | julienbovet.com'
+    });
+  }
   //
   return (
   <div>

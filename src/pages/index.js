@@ -17,12 +17,14 @@ class BlogIndex extends React.Component {
     const imageURL = get(this,'props.data.allFile.edges[0].node.publicURL')
     const fullImageURL = "https://julienbovet.com".concat(imageURL)
     // Analytics
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'virtualPageView',
-      pagePath: '/',
-      pageTitle: siteTitle
-    });
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'virtualPageView',
+        pagePath: '/',
+        pageTitle: siteTitle
+      });
+    }
     //
     return (
       <div>
