@@ -91,7 +91,7 @@ module.exports = {
     },
     `gatsby-plugin-feed`,
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',
