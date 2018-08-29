@@ -1,6 +1,6 @@
 import React from 'react'
 
-class NotFoundPage extends React.Component {
+class NotFoundPage extends React.PureComponent {
   render() {
     console.log("I'm in")
     return (
