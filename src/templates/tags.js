@@ -14,7 +14,14 @@ const Tags2 = ({ pathContext, data }) => {
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`;
-
+  // Analytics
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'virtualPageView',
+    pagePath: `/tags/${tag.toLowerCase()}/`,
+    pageTitle: pageTitle
+  });
+  //
   return (
     <div>
     <Helmet title={pageTitle} />

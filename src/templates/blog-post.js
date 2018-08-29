@@ -25,6 +25,14 @@ class BlogPostTemplate extends React.Component {
     const fullPublicURL = "https://julienbovet.com".concat(post.frontmatter.featuredImage.publicURL)
     const fullPostURL = "https://julienbovet.com".concat(post.frontmatter.path)
     const ogDescription = (post.frontmatter.subtitle).concat(' ').concat(post.excerpt)
+    // Analytics
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'virtualPageView',
+      pagePath: post.frontmatter.path,
+      pageTitle: `${post.frontmatter.title} | ${siteTitle}`
+    });
+    //
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}>

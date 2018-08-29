@@ -16,7 +16,16 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
-}) => (
+}) => {
+  // Analytics
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'virtualPageView',
+    pagePath: '/tags/',
+    pageTitle: 'All tags | julienbovet.com'
+  });
+  //
+  return (
   <div>
     <Helmet title='All tags | julienbovet.com' />
     <div>
@@ -35,7 +44,7 @@ const TagsPage = ({
       </div>
     </div>
   </div>
-);
+)};
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
