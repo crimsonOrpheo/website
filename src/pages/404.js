@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 
 class NotFoundPage extends React.Component {
   render() {
+    console.log('I was triggered during render');
     if (typeof window !== 'undefined') {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
