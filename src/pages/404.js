@@ -1,4 +1,6 @@
 import React from 'react'
+import nothing from './404.gif'
+import Link from 'gatsby-link';
 
 const NotFoundPage = () => {
   // Analytics
@@ -11,8 +13,21 @@ const NotFoundPage = () => {
   //
   return (
   <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <h1>What are you lookin&#39; for? There&#39;s nothing here! </h1>
+    <p>Click on this confused Travolta gif to get back home!</p>
+    <Link  to={`/`}>
+      <img
+        src={nothing}
+        alt={`Nothing!`}
+        // style={{
+        //   marginRight: rhythm(1 / 3),
+        //   marginBottom: 0,
+        //   width: rhythm(2),
+        //   height: rhythm(2),
+        //   borderRadius: 10
+        // }}
+      />
+    </Link>
   </div>
 )};
 
