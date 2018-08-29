@@ -1,6 +1,9 @@
 import React from 'react'
 
 class NotFoundPage extends React.PureComponent {
+  componentDidMount(){
+    console?log("I did mount")
+  }
   render() {
     console.log("I'm in")
     return (
