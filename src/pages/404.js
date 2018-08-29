@@ -1,6 +1,4 @@
 import React from 'react'
-import nothing from './404.gif'
-import Link from 'gatsby-link';
 
 class NotFoundPage extends React.Component {
   render() {
@@ -13,6 +11,9 @@ class NotFoundPage extends React.Component {
 }
 
 export default NotFoundPage;
+
+// import nothing from './404.gif'
+// import Link from 'gatsby-link';
 
 // componentDidMount(){
 //   if (typeof window !== 'undefined') {
