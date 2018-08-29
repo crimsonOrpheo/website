@@ -1,6 +1,10 @@
 import React from 'react'
 
 class NotFoundPage extends React.PureComponent {
+  static propTypes = {
+    data: () => {},
+    location: () => {},
+  }
   componentDidMount(){
     console.log("I did mount")
   }
