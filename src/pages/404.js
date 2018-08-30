@@ -1,6 +1,6 @@
 import React from 'react'
 
-class NotFoundPage extends React.PureComponent {
+class NotFoundPage extends React.Component {
   static propTypes = {
     data: () => {},
     location: () => {},
