@@ -1,8 +1,10 @@
 import React from 'react'
 
 class NotFoundPage extends React.Component {
-  componentWillUnmount(){
-    console.log("I'm gonna unmount")
+  componentDidMount(){
+    if (typeof(document.getElementsByTagName("h3"))!=null) {
+      console.log("I did mount")
+    }
   }
   shouldComponentUpdate(){
     return false
