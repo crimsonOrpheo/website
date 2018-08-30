@@ -74,7 +74,11 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(2)
           }}
         />
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      <DiscussionEmbed
+      shortname={disqusShortname}
+      config={disqusConfig}
+      onNewComment={() => simpleEvent('Article','New comment')
+      } />
       </div>
     )
   }
