@@ -19,7 +19,6 @@ class NotFoundPage extends React.Component {
     return false
   }
   render() {
-    console.log("I'm in")
     return (
     <div>
       <h1>What are you lookin&#39; for? There&#39;s nothing here! </h1>
