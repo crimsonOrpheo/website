@@ -21,6 +21,7 @@ class BlogPostTemplate extends React.Component {
     const disqusConfig = {
       identifier: post.id,
       title: post.frontmatter.title,
+      onNewComment: () => simpleEvent('Article','New comment')
     };
     const fullPublicURL = "https://julienbovet.com".concat(post.frontmatter.featuredImage.publicURL)
     const fullPostURL = "https://julienbovet.com".concat(post.frontmatter.path)
@@ -74,11 +75,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(2)
           }}
         />
-      <DiscussionEmbed
-      shortname={disqusShortname}
-      config={disqusConfig}
-      onNewComment={() => simpleEvent('Article','New comment')
-      } />
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
       </div>
     )
   }
