@@ -2,7 +2,7 @@ import React from 'react'
 
 class NotFoundPage extends React.Component {
   componentDidMount(){
-    if (typeof(document.getElementsByTagName("h3"))!=null) {
+    if (document.getElementsByTagName("h3").length > 0) {
       console.log("I did mount")
     }
   }
