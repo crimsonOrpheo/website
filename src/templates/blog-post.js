@@ -65,7 +65,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-0.5),
           }}
         >
-        {post.frontmatter.date} in<Tags list={post.frontmatter.tags || []}/> by Julien Bovet.
+        {post.frontmatter.date} in<Tags list={post.frontmatter.tags || []}/> by <Link to={`/cv/`}>Julien Bovet</Link>.
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
