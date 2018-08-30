@@ -10,13 +10,9 @@ import { rhythm } from '../utils/typography'
 import VerticalNavigationList from '../components/search/VerticalNavigationList';
 
 class BlogIndex extends React.Component {
-  render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
-    const siteSearchIndex = get(this, 'props.data.siteSearchIndex')
-    const imageURL = get(this,'props.data.allFile.edges[0].node.publicURL')
-    const fullImageURL = "https://julienbovet.com".concat(imageURL)
+  componentDidMount(){
     // Analytics
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     if (typeof window !== 'undefined') {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
@@ -26,6 +22,13 @@ class BlogIndex extends React.Component {
       });
     }
     //
+  }
+  render() {
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const siteSearchIndex = get(this, 'props.data.siteSearchIndex')
+    const imageURL = get(this,'props.data.allFile.edges[0].node.publicURL')
+    const fullImageURL = "https://julienbovet.com".concat(imageURL)
     return (
       <div>
         <Helmet title={siteTitle}>

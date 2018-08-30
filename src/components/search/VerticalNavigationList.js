@@ -4,6 +4,8 @@ import Search from './Search';
 import '../../styles/animations.css'
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { simpleEvent } from '../../utils/digital-analytics'
+
 
 class VerticalNavigationList extends Component {
   constructor(...rest) {
@@ -11,6 +13,14 @@ class VerticalNavigationList extends Component {
     this.state = {
       hits: null,
     };
+  }
+
+  componentDidMount(){
+    simpleEvent('Search','Opens')
+  }
+
+  componentWillUnmount(){
+    simpleEvent('Search','Closes')
   }
 
   render() {
