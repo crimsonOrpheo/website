@@ -8,6 +8,9 @@ class NotFoundPage extends React.PureComponent {
   componentDidMount(){
     console.log("I did mount")
   }
+  shouldComponentUpdate(){
+    return false
+  }
   render() {
     console.log("I'm in")
     return (
