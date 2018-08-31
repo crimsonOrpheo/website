@@ -2,6 +2,14 @@ import PropTypes from 'prop-types';
 import qs from 'qs';
 import React, { Component } from 'react';
 import { Index } from 'elasticlunr';
+import { GTMsearchQuery } from '../../utils/digital-analytics.js'
+
+export const query  = graphql`query
+SearchIndexQuery {
+    siteSearchIndex {
+      index
+    }
+}`;
 
 const getSearch = ({ location }) => {
   if (!location) return '';
@@ -12,6 +20,11 @@ const getSearch = ({ location }) => {
   if (!parsed.q) return '';
   return parsed.q;
 };
+
+var t;
+var queryTag;
+var queryResults;
+var isOn;
 
 export default class Search extends Component {
   constructor(props, context) {
@@ -46,11 +59,41 @@ export default class Search extends Component {
     if (!query) return [];
 
     if (!this.index) this.createIndex();
-    const hits = this.index.search(query);
+    const hits = this.index.search(query,{});
     return hits.map(({ ref }) => this.index.documentStore.getDoc(ref));
   }
+
+  componentDidUpdate(){
+    isOn = true;
+    resetTimer;
+    queryTag = this.state.query;
+    queryResults = this.state.hits.length;
+    document.onmousemove = resetTimer;
+    document.onkeypress = resetTimer;
+    function resetTimer() {
+        if (isOn) {
+        clearTimeout(t);
+        t = setTimeout(sendTag, 1000)
+        // 1000 milisec = 1 sec
+      }
+    }
+    function sendTag(){
+      if(queryTag!=""){
+      if (isOn){
+        GTMsearchQuery('Search','Query',queryTag,queryResults)
+        isOn = false;
+      }
+      }
+    }
+  }
+
+  componentWillUnmount(){
+    isOn = false;
+  }
+
   render() {
     const { query, hits } = this.state;
+
     return (
       <div role="search"
       style={{

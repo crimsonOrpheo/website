@@ -5,6 +5,7 @@ import { rhythm, scale } from '../utils/typography'
 import get from 'lodash/get'
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 require("prismjs/themes/prism-solarizedlight.css");
+import { simpleEvent } from '../utils/digital-analytics'
 
 class Template extends React.Component {
   constructor () {
@@ -15,9 +16,15 @@ class Template extends React.Component {
   }
   toggleHidden (event) {
     if (!event.target.matches('input'))
-    this.setState({
+    {this.setState({
       isHidden: !this.state.isHidden
     })
+    if (this.state.isHidden) {
+      simpleEvent('Search','Opens');
+    } else {
+      if(event.target.tagName.toLowerCase()!=='a'&&event.target.tagName.toLowerCase()!=='span'){
+      simpleEvent('Search','Closes');
+    }}}
   }
   render() {
     const { location, children } = this.props

@@ -15,14 +15,6 @@ class VerticalNavigationList extends Component {
     };
   }
 
-  componentDidMount(){
-    simpleEvent('Search','Opens')
-  }
-
-  componentWillUnmount(){
-    simpleEvent('Search','Closes')
-  }
-
   render() {
     const { currentSlug, edges, searchData } = this.props;
     const { hits } = this.state;

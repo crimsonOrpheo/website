@@ -12,17 +12,17 @@ import VerticalNavigationList from '../components/search/VerticalNavigationList'
 class BlogIndex extends React.Component {
   componentDidMount(){
     // Analytics
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     if (typeof window !== 'undefined') {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'virtualPageView',
         pagePath: '/',
-        pageTitle: siteTitle
+        pageTitle: 'julienbovet.com'
       });
     }
     //
   }
+
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
