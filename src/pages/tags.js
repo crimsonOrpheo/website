@@ -9,24 +9,21 @@ import kebabCase from "lodash/kebabCase";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
 
-const TagsPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-}) => {
-  // Analytics
-  if (typeof window !== 'undefined') {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'virtualPageView',
-      pagePath: '/tags/',
-      pageTitle: 'All tags | julienbovet.com'
-    });
+class TagsPage extends React.Component {
+
+  componentDidMount(){
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'virtualPageView',
+        pagePath: '/tags/',
+        pageTitle: 'All tags | julienbovet.com'
+      });
+    }
   }
-  //
+
+  render(){
+  const {group} = this.props.data.allMarkdownRemark;
   return (
   <div>
     <Helmet title='All tags | julienbovet.com' />
@@ -46,25 +43,7 @@ const TagsPage = ({
       </div>
     </div>
   </div>
-)};
-
-TagsPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      group: PropTypes.arrayOf(
-        PropTypes.shape({
-          fieldValue: PropTypes.string.isRequired,
-          totalCount: PropTypes.number.isRequired,
-        }).isRequired
-      ),
-    }),
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }),
-    }),
-  }),
-};
+)};}
 
 export default TagsPage;
 
