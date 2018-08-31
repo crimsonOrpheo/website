@@ -63,9 +63,11 @@ class Template extends React.Component {
               float: 'right',
               marginBottom : 0,
               marginTop : 6,
-              cursor: 'pointer'
+              cursor: 'pointer',
+              height: 24,
+              width: 24
             }}
-            src={ require('../../static/magnifying-glass.png') } />
+            src={ require('../../static/magnifying-glass.svg') } />
         </h1>
 
         <div onClick={this.toggleHidden.bind(this)}><ReactCSSTransitionGroup transitionName="thing">
