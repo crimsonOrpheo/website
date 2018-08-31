@@ -13,6 +13,19 @@ import '../styles/tagPills.css'
 import { DiscussionEmbed } from "disqus-react"
 
 class BlogPostTemplate extends React.Component {
+  componentDidMount(){
+    const post = this.props.data.markdownRemark
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'virtualPageView',
+        pagePath: post.frontmatter.path,
+        pageTitle: `${post.frontmatter.title} | ${siteTitle}`
+      });
+    }
+    //
+  }
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
@@ -26,16 +39,6 @@ class BlogPostTemplate extends React.Component {
     const fullPublicURL = "https://julienbovet.com".concat(post.frontmatter.featuredImage.publicURL)
     const fullPostURL = "https://julienbovet.com".concat(post.frontmatter.path)
     const ogDescription = (post.frontmatter.subtitle).concat(' ').concat(post.excerpt)
-    // Analytics
-    if (typeof window !== 'undefined') {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'virtualPageView',
-        pagePath: post.frontmatter.path,
-        pageTitle: `${post.frontmatter.title} | ${siteTitle}`
-      });
-    }
-    //
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}>
@@ -68,7 +71,9 @@ class BlogPostTemplate extends React.Component {
         >
         {post.frontmatter.date} in<Tags list={post.frontmatter.tags || []}/> by <Link to={`/cv/`} onClick={() => simpleEvent('Article','CV')}>Julien Bovet</Link>.
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} style={{
+          zindex: 10
+        }}/>
         <hr
           style={{
             marginBottom: rhythm(1),

@@ -84,23 +84,45 @@ class Template extends React.Component {
       )
     } else {
       header = (
-        <h3
-          style={{
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
+        <div>
+          <h3
             style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
+              marginTop: 0,
+              marginBottom: rhythm(-1),
             }}
-            to={'/'}
           >
-            julienbovet.com
-          </Link>
-        </h3>
+            <Link
+              style={{
+                boxShadow: 'none',
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
+              to={'/'}
+            >
+              julienbovet.com
+            </Link>
+            <img onClick={this.toggleHidden.bind(this)}
+              style={{
+                float: 'right',
+                marginBottom : 0,
+                marginTop : 0,
+                cursor: 'pointer',
+                height: 16,
+                width: 16
+              }}
+              src={ require('../../static/magnifying-glass.svg') } />
+          </h3>
+          <div onClick={this.toggleHidden.bind(this)}><ReactCSSTransitionGroup transitionName="thing">
+            {!this.state.isHidden &&
+              <VerticalNavigationList
+                      className="searchOverlay"
+                      currentSlug={'/'}
+                      edges={posts}
+                      searchData={siteSearchIndex}
+                    />}
+                    </ReactCSSTransitionGroup>
+          </div>
+        </div>
       )
     }
     return (

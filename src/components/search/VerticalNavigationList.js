@@ -23,13 +23,13 @@ class VerticalNavigationList extends Component {
           style={{
             backgroundColor : 'rgba(0, 0, 0, 0.85)',
             color: 'White',
-            zindex: 1000,
             position: 'fixed',
             left: '0',
             right: '0',
             top: '0',
             bottom: '0',
             overflowY:'auto',
+            zIndex: 10000,
           }}>
           <Search
             data={searchData}
