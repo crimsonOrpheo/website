@@ -1,6 +1,7 @@
 import Link from 'gatsby-link';
 import React from 'react';
 import Tags from '../../components/Taglist';
+import { complexEvent } from '../../utils/digital-analytics'
 
 const NavigationItem = ({ depth, href, value, extract, tags, date, subtitle }) => (
   <dd
@@ -18,7 +19,7 @@ const NavigationItem = ({ depth, href, value, extract, tags, date, subtitle }) =
         color: 'white',
         fontWeight: 600
       }}
-      to={href}>{value}</Link><br/>
+      to={href} onClick={() => complexEvent('Article','Reach from search',{href}["href"])}>{value}</Link><br/>
       <small
       style={{
         color:'#bdc3c7'

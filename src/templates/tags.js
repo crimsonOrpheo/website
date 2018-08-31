@@ -4,8 +4,7 @@ import { rhythm } from '../utils/typography'
 import Tags from '../components/Taglist';
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
-
-// Components
+import { complexEvent } from '../utils/digital-analytics'
 
 class Tags2 extends React.Component {
   componentDidMount(){
@@ -45,7 +44,7 @@ class Tags2 extends React.Component {
                 style={{
                   marginBottom: rhythm(1 / 4),
                 }}>
-                  <Link style={{ boxShadow: 'none' }}  to={path}>{title}</Link>
+                  <Link style={{ boxShadow: 'none' }}  to={path} onClick={() => complexEvent('Article','Reach from tags',node.frontmatter.path)}>{title}</Link>
               </h3>
               <h4 style={{
                   marginTop : 0

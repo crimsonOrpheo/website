@@ -4,6 +4,8 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import graphql from 'graphql-tag';
 
+import { complexEvent } from '../utils/digital-analytics'
+
 import Tags from '../components/Taglist';
 import Bio from '../components/Bio'
 import { rhythm } from '../utils/typography'
@@ -55,7 +57,7 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: 'none' }} to={node.frontmatter.path}>
+                <Link style={{ boxShadow: 'none' }} to={node.frontmatter.path} onClick={() => complexEvent('Article','Reach from home',node.frontmatter.path)}>
                   {title}
                 </Link>
               </h3>
