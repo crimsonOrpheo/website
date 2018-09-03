@@ -59,6 +59,7 @@ class Template extends React.Component {
             julienbovet.com
           </Link>
           <img onClick={this.toggleHidden.bind(this)}
+            alt={`Search icon`}
             style={{
               float: 'right',
               marginBottom : 0,
@@ -102,6 +103,7 @@ class Template extends React.Component {
               julienbovet.com
             </Link>
             <img onClick={this.toggleHidden.bind(this)}
+              alt={`Search icon`}
               style={{
                 float: 'right',
                 marginBottom : 0,
