@@ -22,7 +22,7 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Julien Bovet`}
+          alt={`My profile picture`}
           style={{
             marginRight: rhythm(1 / 3),
             marginBottom: 0,
@@ -37,6 +37,7 @@ class Bio extends React.Component {
           <a href="https://twitter.com/BovetJulien" onClick={() => simpleEvent('Bio','Twitter')}>
             <img
               src={twitter}
+              alt={`Twitter logo`}
               style={{
                 borderRadius: 5,
                 marginRight: rhythm(1 / 3),
@@ -48,6 +49,7 @@ class Bio extends React.Component {
           <a href="https://www.linkedin.com/in/julienbovet" onClick={() => simpleEvent('Bio','Linkedin')}>
             <img
               src={linkedIn}
+              alt={`Linkedin logo`}
               style={{
                 borderRadius: 5,
                 marginRight: rhythm(1 / 3),
