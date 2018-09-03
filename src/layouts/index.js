@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 import VerticalNavigationList from '../components/search/VerticalNavigationList';
 import { rhythm, scale } from '../utils/typography'
 import get from 'lodash/get'
@@ -136,6 +137,9 @@ class Template extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
+        <Helmet>
+          <html lang="en" />
+        </Helmet>
         {header}
         {children()}
       </div>
