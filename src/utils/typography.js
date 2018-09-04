@@ -9,6 +9,12 @@ githubTheme.baseParagraphSpacing = 24
 githubTheme.overrideThemeStyles = () => ({
   'a.gatsby-resp-image-link': {
     boxShadow: 'none',
+  },
+  '::selection': {
+    background: '#dff9fb', /* WebKit/Blink Browsers */
+  },
+  '::-moz-selection': {
+    background: '#dff9fb', /* Gecko Browsers */
   }
 })
 
